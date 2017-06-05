@@ -1,0 +1,26 @@
+Library name : RobotLxcLibrary
+Author: Basil Saji
+
+Description: This is a library for robotframework to manage lxc containers
+
+The keywords available are:
+
+Container Start <name> <template> 
+    This keyword is used to start a container with name as "name" and template. Default template is ubuntu. This returns the container object
+    eg. Container Start     test123     ubuntu
+    eg, Container Start     test123
+
+Container Get Ip <container object>
+    This keyword returns the IP address of the container
+    example usage -
+    ${container}=   Container Start     test123
+    ${ip}=      Container Get Ip    ${container}
+
+Container Execute Cmd <container object> <cmd>
+    This keyword is used to execute commands on the container
+    eg. Container Execute Cmd   ${container}    sudo apt-get update
+
+Container Destroy <container object>
+    This keyword is used to destroy the container
+    eg. Container Destroy   ${container}
+
